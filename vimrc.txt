@@ -1,0 +1,29 @@
+   set number
+   syntax on
+   call plug#begin('~/.vim/plugged')
+   Plug 'junegunn/vim-easy-align'
+   Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+   Plug 'https://github.com/frazrepo/vim-rainbow'
+   Plug 'https://github.com/vim-syntastic/syntastic'
+   Plug 'itchyny/lightline.vim'
+   Plug 'arcticicestudio/nord-vim', {'as' : 'nord'}
+   Plug 'eslint/eslint'
+   Plug 'fatih/vim-go'
+   Plug 'pangloss/vim-javascript'
+   Plug 'rust-lang/rust.vim'
+   Plug 'chiel92/vim-autoformat'
+ 
+   call plug#end()
+ 
+   colorscheme nord
+   au FileType c,cpp,objc,objcpp,js,go,rs,java call rainbow#load()
+   let g:rainbow_active = 1
+   set statusline+=%#warningmsg#
+   set statusline+=%{SyntasticStatuslineFlag()}
+   set statusline+=%*
+  
+   let g:syntastic_always_populate_loc_list = 1
+   let g:syntastic_auto_loc_list = 1
+   let g:syntastic_check_on_open = 1
+   let g:syntastic_check_on_wq = 0
+   set laststatus=2
